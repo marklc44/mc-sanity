@@ -10,7 +10,7 @@ export default function PostBody({ body }: { body: Body[]}) {
       {body.map(item => {
         return (
           <p key={item._key}>
-            {item.children.map(child => child.text)}
+            {item?.children?.map(child => child.text)}
           </p>
         )
       })}

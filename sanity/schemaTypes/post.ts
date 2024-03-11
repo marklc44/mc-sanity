@@ -23,7 +23,7 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
     }),
     defineField({
       name: 'mainImage',
@@ -37,7 +37,7 @@ export default defineType({
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
-        }
+        },
       ]
     }),
     defineField({

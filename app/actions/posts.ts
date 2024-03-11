@@ -6,11 +6,20 @@ export const getPosts = async (): Promise<Post[]> => {
     _id,
     title,
     publishedAt,
+      mainImage->{
+        "url": asset->url,
+        asset->{
+          ...
+        }
+      },
+    "authorName": author->name,
     categories[] ->{
+      _id,
       title
     },
     'slug': slug.current,
-    body
+    body,
+      ...
   }`
 
   try {
