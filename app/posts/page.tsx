@@ -1,4 +1,4 @@
-import PostsList from "./PostsList"
+import PostsGrid from "../_components/PostsGrid"
 
 /**
  * Page title and layout -> layout file
@@ -6,9 +6,8 @@ import PostsList from "./PostsList"
 export default async function PostsPage() {
   return (
     <main>
-      <h1>Posts</h1>
-      <hr />
-      <PostsList />
+      <h1>Articles</h1>
+      <PostsGrid />
     </main>
   )
 }

@@ -11,14 +11,11 @@ export default function PostMeta({
     categories: Category[]
 }) {
   const formattedPubDate = dayjs(pubDate).format('MM/DD/YYYY')
-  console.log('author: ', author)
+
   return (
-    <section>
-      <span>By:</span>{" "}
-      <span>{author}</span> {" | "}
-      <span>{formattedPubDate}</span>
-      <br />
-      <span>{categories[0].title}</span>
+    <section className={`postMeta mb-2`}>
+      <span className={`text-sm italic block`}>{`By ${author} on ${formattedPubDate}`}</span>
+      <span className={`text-sm block`}>{categories[0].title}</span>
     </section>
   )
 }

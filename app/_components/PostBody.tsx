@@ -1,20 +1,36 @@
 
-import { Body } from "@/types/post"
+import { Body } from "@/types/Post"
+import PostExcerpt from "./PostExcerpt"
 /**
- * Might need to handle different html elements in the body. This is pretty annoying, actually.
+ * Might need to handle different html elements, so push display down to block/image components
  */
-export default function PostBody({ body }: { body: Body[]}) {
+
+const truncateExcerpt = (text: string | undefined) => {
+  if (!text) return ''
+  return `${text.substring(0, 80)}...`
+}
+export default function PostBody({
+  body,
+  isExcerpt,
+  slug,
+}: {
+    body: Body[],
+    isExcerpt: boolean,
+    slug: string
+}) {
+  const excerptText = isExcerpt ? truncateExcerpt(body?.[0]?.children?.[0]?.text) : null
 
   return (
     <article>
-      {body.map(item => {
+      {!isExcerpt ? body.map(item => {
         return (
           <p key={item._key}>
             {item?.children?.map(child => child.text)}
           </p>
         )
-      })}
+      }) : (
+          <PostExcerpt text={excerptText} slug={slug} />
+      )}
     </article>
   )
-
 }

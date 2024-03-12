@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  @apply text-6xl mb-6
+}
+h2 {
+  @apply text-5xl mb-5
+}
+h3 {
+  @apply text-4xl mb-4
+}
+h4 {
+  @apply text-3xl mb-3
+}
+p {
+  @apply mb-1
+}
+
+/* Hover transitions */
+
+.link {
+  @apply text-sky-600 hover:text-sky-400
+}
+.mainNavLink {
+  @apply py-2
+}
+.mainNavAnchor {
+  @apply text-sky-600 hover:text-sky-300 active:text-sky-300 hover:transition-colors
+}

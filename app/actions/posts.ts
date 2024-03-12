@@ -1,32 +1,42 @@
 import { client } from "@/sanity/lib/client"
-import { Post } from "@/types/post"
+import { Post } from "@/types/Post"
 
 export const getPosts = async (): Promise<Post[]> => {
   const query = `*[_type == "post"] | order(publishedAt desc) {
     _id,
     title,
     publishedAt,
-      mainImage->{
-        "url": asset->url,
-        asset->{
-          ...
-        }
-      },
+    mainImage,
     "authorName": author->name,
     categories[] ->{
       _id,
       title
     },
     'slug': slug.current,
-    body,
-      ...
+    body
   }`
 
   try {
     const res = await client.fetch(query)
-    // console.log('res: ', res)
     return res
   } catch (error) {
     console.error(error)
   }
 }
+
+// get posts by category
+
+// get single post
+export const getPost = async (slug: string) => {
+  const query = `*[_type == "post" && slug.current == "${slug}"] {
+    ...
+  }`
+
+  try {
+    const res = await client.fetch(query)
+    return res
+  } catch (error) {
+    console.error(error)
+  }
+}
+
