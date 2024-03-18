@@ -38,7 +38,7 @@ export default defineType({
         // preference or highlighting
         decorators: [
           {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
+          { title: 'Emphasis', value: 'em' },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -68,7 +68,17 @@ export default defineType({
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
-        }
+        },
+        {
+          name: 'height',
+          type: 'number',
+          title: 'Height',
+        },
+        {
+          name: 'width',
+          type: 'number',
+          title: 'Width',
+        },
       ]
     }),
   ],

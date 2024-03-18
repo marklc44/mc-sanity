@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 interface Props {
-  text?: string | undefined
+  text?: string | undefined | null
   slug: string | undefined
 }
 
