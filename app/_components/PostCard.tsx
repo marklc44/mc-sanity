@@ -20,6 +20,7 @@ export default function PostCard({ post }: { post: Post }) {
               height={200}
               width={200}
               alt="distracted child"
+              loading="lazy"
               style={{
                 maxHeight: '300px',
                 objectFit: 'cover',
@@ -45,6 +46,7 @@ export default function PostCard({ post }: { post: Post }) {
         <PostMeta
           author={post.authorName}
           pubDate={post.publishedAt}
+          onCard={true}
         />
         <PostBody
           body={body}

@@ -24,7 +24,6 @@ export default function SanityImage({
       alt={alt}
       width={width}
       height={height}
-      loading="lazy"
       {...rest}
     />
   )

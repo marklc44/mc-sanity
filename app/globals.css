@@ -53,7 +53,7 @@ p {
 
 .mobileMenuOpen {
   @apply h-screen pt-12;
-  li {
-    margin-bottom: 12px;
-  }
+}
+.mobileMenuOpen li {
+  @apply mb-4;
 }

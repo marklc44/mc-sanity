@@ -3,6 +3,7 @@ import { getPosts, getPost } from '@/app/actions/posts'
 import PostMeta from '@/app/_components/PostMeta'
 import DoubleSeparator from '@/app/_components/DoubleSeparator'
 import PostCategories from '@/app/_components/PostCategories'
+import SanityImage from '@/app/_components/SanityImage'
 
 export default async function SinglePost({
   params,
@@ -25,7 +26,16 @@ export default async function SinglePost({
         author={post.authorName}
         pubDate={post.publishedAt}
       />
-      <DoubleSeparator />
+      <section className="mb-8">
+        <SanityImage
+          image={post.mainImage}
+          height={1080}
+          width={1080}
+          alt="distracted child"
+          priority={true}
+        />
+      </section>
+
       <PostBody
         body={post.body}
         isExcerpt={false}
