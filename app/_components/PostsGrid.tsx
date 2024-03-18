@@ -4,7 +4,7 @@ import CategoryFilterBar from './CategoryFilterBar'
 import { Post } from '@/types/Post'
 import { useEffect, useMemo, useState } from 'react'
 import { Category } from '@/types/Category'
-import { getAllCategories } from '@/utils/category-utils'
+import { getAllCategoriesFromPosts } from '@/utils/category-utils'
 
 interface Props {
   posts: Post[]
@@ -13,7 +13,7 @@ interface Props {
 export default function PostsGrid({ posts }: Props) {
   const [displayCategories, setDisplayCategories] = useState<Category[]>([])
   const allCats = useMemo(() => {
-    return getAllCategories(posts)
+    return getAllCategoriesFromPosts(posts)
   }, [posts])
 
   useEffect(() => {

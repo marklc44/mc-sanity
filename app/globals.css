@@ -41,8 +41,19 @@ p {
   @apply text-sky-600 hover:text-sky-400;
 }
 .mainNavLink {
-  @apply py-2;
+  @apply py-2 px-6;
 }
 .mainNavAnchor {
-  @apply text-sky-600 hover:text-sky-300 active:text-sky-300 hover:transition-colors;
+  @apply text-sky-600 hover:text-sky-300 active:text-sky-300 hover:transition-colors text-lg;
+}
+
+.mobileMenu {
+  @apply w-full h-0 overflow-hidden transition-all;
+}
+
+.mobileMenuOpen {
+  @apply h-screen pt-12;
+  li {
+    margin-bottom: 12px;
+  }
 }
