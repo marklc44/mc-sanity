@@ -25,11 +25,24 @@ export const getPosts = async (): Promise<Post[]> => {
 }
 
 // get posts by category
+export const getPostsByCategory = async (category: string) => {
+  
+}
 
 // get single post
 export const getPost = async (slug: string) => {
   const query = `*[_type == "post" && slug.current == "${slug}"] {
-    ...
+    _id,
+    title,
+    publishedAt,
+    mainImage,
+    "authorName": author->name,
+    categories[] ->{
+      _id,
+      title
+    },
+    'slug': slug.current,
+    body
   }`
 
   try {

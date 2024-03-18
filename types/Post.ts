@@ -4,9 +4,11 @@ export interface Post {
   _id: string
   title: string
   slug: string
-  publishedAt: Date // always null for some reason, omit if never needed
+  publishedAt: string
+  mainImage: any
   body: Body[]
   categories: Category[]
+  authorName: string
   author: Author
   _updatedAt: string // parse to date, use as pub date
 }

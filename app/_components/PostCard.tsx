@@ -1,36 +1,57 @@
-import PostMeta from "./PostMeta"
-import PostBody from "./PostBody"
-import SanityImage from "./SanityImage"
+import PostMeta from './PostMeta'
+import PostBody from './PostBody'
+import SanityImage from './SanityImage'
+import { Post } from '@/types/Post'
+import Link from 'next/link'
+import PostCategories from './PostCategories'
 
-export default function PostCard({ key, post }) {
-  const { _id, title, categories, body, mainImage } = post
+export default function PostCard({ post }: { post: Post }) {
+  const { title, categories, body, mainImage, slug } = post
   console.log('post: ', post)
   return (
-    <article key={_id} className={`postCard flex flex-col h-full rounded-xl overflow-hidden bg-slate-50`}>
+    <article
+      className={`postCard flex flex-col h-full rounded-xl overflow-hidden bg-slate-50 content-between`}
+    >
       <div className={`header`}>
-      {mainImage?.asset && (
-        <SanityImage
-          image={mainImage}
-          height={200}
-          width={200}
-          alt="distracted child"
-          style={{
-            maxHeight: '300px',
-            objectFit: 'cover',
-          }}
-        />
-      )}
+        {mainImage?.asset && (
+          <Link href={`/posts/${slug}`}>
+            <SanityImage
+              image={mainImage}
+              height={200}
+              width={200}
+              alt="distracted child"
+              style={{
+                maxHeight: '300px',
+                objectFit: 'cover',
+              }}
+            />
+          </Link>
+        )}
       </div>
-      <div className={`content p-4`}>
-        <h3>{title}</h3>
+      <div className={`content flex flex-col content-between p-4`}>
+        <section>
+          <div>
+            <PostCategories
+              categories={categories}
+              displayLimit={1}
+              className={`eyebrow`}
+            />
+          </div>
+          <h3>
+            <Link href={`/posts/${slug}`}>{title}</Link>
+          </h3>
+        </section>
+
         <PostMeta
           author={post.authorName}
           pubDate={post.publishedAt}
-          categories={post.categories}
         />
-        <PostBody body={body} isExcerpt={true} slug={post.slug} />
+        <PostBody
+          body={body}
+          isExcerpt={true}
+          slug={post.slug}
+        />
       </div>
-      
     </article>
   )
 }

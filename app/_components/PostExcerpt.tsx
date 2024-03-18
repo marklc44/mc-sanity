@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline"
+import Link from 'next/link'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 interface Props {
   text?: string | undefined
@@ -8,21 +8,20 @@ interface Props {
 
 export default function PostExcerpt({ text, slug }: Props) {
   return (
-    <p>
-      <span>{text}</span>{" "}
-      <span className={`link`}>
-        <Link
-          href={`/posts/${slug}`}
-        >
+    <div>
+      <span>{text}</span>{' '}
+      <div className={`link no-underline`}>
+        <Link href={`/posts/${slug}`}>
+          <span>{`[ `}</span>
           <span>more</span>
           <span>
-            <ArrowLongRightIcon
-              className={`text-sm w-6 inline-block`}
+            <ArrowRightIcon
+              className={`text-sm w-4 inline-block translate-x-1`}
             />
           </span>
-          
+          <span>{` ]`}</span>
         </Link>
-      </span>
-    </p>
+      </div>
+    </div>
   )
 }

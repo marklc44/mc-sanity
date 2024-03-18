@@ -4,7 +4,9 @@ import PillBtn from './PillBtn'
 export default function MainNavBar() {
   return (
     <>
-      <div>Logo</div>
+      <div className="uppercase">
+        <Link href="/">Mark Centoni</Link>
+      </div>
       <nav>
         <ul className={`list-none flex justify-around`}>
           <li className="mainNavLink">
