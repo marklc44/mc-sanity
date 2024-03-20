@@ -1,6 +1,6 @@
 import PostMeta from './PostMeta'
 import PostBody from './PostBody'
-import SanityImage from './SanityImage'
+import SanityImage from '../SanityImage'
 import { Post } from '@/types/Post'
 import Link from 'next/link'
 import PostCategories from './PostCategories'
@@ -10,7 +10,7 @@ export default function PostCard({ post }: { post: Post }) {
   console.log('post: ', post)
   return (
     <article
-      className={`postCard flex flex-col h-full rounded-xl overflow-hidden bg-slate-50 content-between`}
+      className={`postCard flex flex-col h-full rounded-lg mb-4 overflow-hidden content-between`}
     >
       <div className={`header`}>
         {mainImage?.asset && (

@@ -1,5 +1,5 @@
 import { getPosts } from '@/app/actions/posts'
-import PostsGrid from '../../_components/PostsGrid'
+import PostsGrid from '../../_components/posts/PostsGrid'
 
 /**
  * Page title and layout -> layout file
@@ -9,7 +9,10 @@ export default async function PostsPage() {
   return (
     <main>
       <h1>Articles</h1>
-      <PostsGrid posts={posts} />
+      <PostsGrid
+        posts={posts}
+        view="grid"
+      />
     </main>
   )
 }

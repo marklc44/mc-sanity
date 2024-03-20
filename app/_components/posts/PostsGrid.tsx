@@ -1,16 +1,19 @@
 'use client'
 import PostCard from './PostCard'
-import CategoryFilterBar from './CategoryFilterBar'
+import PostListItem from './PostListItem'
+import CategoryFilterBar from '../CategoryFilterBar'
 import { Post } from '@/types/Post'
 import { useEffect, useMemo, useState } from 'react'
 import { Category } from '@/types/Category'
 import { getAllCategoriesFromPosts } from '@/utils/category-utils'
+import classNames from 'classnames'
 
 interface Props {
   posts: Post[]
+  view: 'list' | 'grid'
 }
 
-export default function PostsGrid({ posts }: Props) {
+export default function PostsGrid({ posts, view = 'list' }: Props) {
   const [displayCategories, setDisplayCategories] = useState<Category[]>([])
   const allCats = useMemo(() => {
     return getAllCategoriesFromPosts(posts)
@@ -44,25 +47,37 @@ export default function PostsGrid({ posts }: Props) {
     })
   }, [posts, displayCategories])
 
+  const containerViewClasses = classNames(
+    `grid`,
+    view === 'grid'
+      ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'
+      : 'grid-cols-1 gap-3'
+  )
+
   return (
     <>
       <CategoryFilterBar
         categories={allCats}
         handleChange={handleCategoryChange}
       />
-      <section
-        className={`grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8`}
-      >
+      <section className={containerViewClasses}>
         {filteredPosts?.map((post) => {
           return (
             <div
               key={`post-item-${post._id}`}
               className={`col-span-1 h-full`}
             >
-              <PostCard
-                key={`post-${post._id}`}
-                post={post}
-              />
+              {view === 'list' ? (
+                <PostListItem
+                  key={`post-${post._id}`}
+                  post={post}
+                />
+              ) : (
+                <PostCard
+                  key={`post-${post._id}`}
+                  post={post}
+                />
+              )}
             </div>
           )
         })}

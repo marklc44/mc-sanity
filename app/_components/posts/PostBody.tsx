@@ -1,7 +1,7 @@
 import { Body } from '@/types/Post'
 import PostExcerpt from './PostExcerpt'
 import { PortableText } from '@portabletext/react'
-import SanityImage from './SanityImage'
+import SanityImage from '../SanityImage'
 import { ReactNode } from 'react'
 import { urlForImage } from '@/sanity/lib/image'
 import Image from 'next/image'
@@ -9,9 +9,9 @@ import Image from 'next/image'
  * Might need to handle different html elements, so push display down to block/image components
  */
 
-const truncateExcerpt = (text: string | undefined) => {
+const truncateExcerpt = (text: string | undefined, length: number) => {
   if (!text) return ''
-  return `${text.substring(0, 80)}...`
+  return `${text.substring(0, length)}...`
 }
 
 const ptComponents = {
@@ -52,7 +52,7 @@ export default function PostBody({
   slug: string
 }) {
   const excerptText = isExcerpt
-    ? truncateExcerpt(body?.[0]?.children?.[0]?.text)
+    ? truncateExcerpt(body?.[0]?.children?.[0]?.text, 120)
     : null
 
   return (

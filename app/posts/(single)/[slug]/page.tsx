@@ -1,8 +1,8 @@
-import PostBody from '@/app/_components/PostBody'
+import PostBody from '@/app/_components/posts/PostBody'
 import { getPosts, getPost } from '@/app/actions/posts'
-import PostMeta from '@/app/_components/PostMeta'
+import PostMeta from '@/app/_components/posts/PostMeta'
 import DoubleSeparator from '@/app/_components/DoubleSeparator'
-import PostCategories from '@/app/_components/PostCategories'
+import PostCategories from '@/app/_components/posts/PostCategories'
 import SanityImage from '@/app/_components/SanityImage'
 
 export default async function SinglePost({
