@@ -6,6 +6,22 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+    }),
+    defineField({
+      name: 'client',
+      title: 'Client',
+      type: 'reference',
+      to: { type: 'client' },
+    }),
+    defineField({
       name: 'sectionImage',
       type: 'image',
       fields: [
