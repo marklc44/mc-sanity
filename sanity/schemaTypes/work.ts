@@ -11,8 +11,8 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'order',
-      title: 'Order',
+      name: 'position',
+      title: 'Position (order)',
       type: 'number',
     }),
     defineField({
@@ -20,6 +20,15 @@ export default defineType({
       title: 'Client',
       type: 'reference',
       to: { type: 'client' },
+    }),
+    defineField({
+      name: 'roles',
+      title: 'Roles',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      }
     }),
     defineField({
       name: 'description',

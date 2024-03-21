@@ -2,7 +2,7 @@ import { client } from "@/sanity/lib/client"
 import { Post } from "@/types/Post"
 
 export const getPosts = async (): Promise<Post[]> => {
-  const query = `*[_type == "post"] | order(publishedAt desc) {
+  const query = `*[_type == "post"] | order(publishedAt desc)] {
     _id,
     title,
     publishedAt,
@@ -22,11 +22,6 @@ export const getPosts = async (): Promise<Post[]> => {
   } catch (error) {
     console.error(error)
   }
-}
-
-// get posts by category
-export const getPostsByCategory = async (category: string) => {
-  
 }
 
 // get single post

@@ -11,8 +11,8 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'order',
-      title: 'Order',
+      name: 'position',
+      title: 'Position (order)',
       type: 'number',
     }),
     defineField({
