@@ -2,15 +2,14 @@ import { client } from "@/sanity/lib/client"
 
 export const getWork = async (slug: string) => {
   const query = `
-  *[_type == "work" && slug.current == "${slug}" | order(position asc)] {
+  *[_type == "work" && slug.current == "${slug}"] | order(position asc) {
       _id,
         title,
         client -> {
           name,
           description,
-          logo->{
-            asset->
-          },
+          "clientSlug": slug->current,
+          logo,
           url
         },
         "workSlug": slug->current,
@@ -25,9 +24,7 @@ export const getWork = async (slug: string) => {
          title,
          order,
          client->,
-         sectionImage->{
-           asset->
-         },
+         sectionImage,
          body,
        }
     }
@@ -48,15 +45,10 @@ export const getWorkSections = async (limit: number | null) => {
     client -> {
       name,
       description,
-      logo->{
-        asset->
-      },
+      logo,
       url
     },
-    description,
-    sectionImage->{
-     asset->
-   },
+    sectionImage,
      body
  }
   `

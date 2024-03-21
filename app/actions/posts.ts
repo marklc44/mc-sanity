@@ -1,8 +1,8 @@
 import { client } from "@/sanity/lib/client"
 import { Post } from "@/types/Post"
 
-export const getPosts = async (): Promise<Post[]> => {
-  const query = `*[_type == "post"] | order(publishedAt desc)] {
+export const getPosts = async (): Promise<Post[] | undefined> => {
+  const query = `*[_type == "post"] | order(publishedAt desc) {
     _id,
     title,
     publishedAt,
