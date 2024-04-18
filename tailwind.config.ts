@@ -9,6 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        icterine: '#eefc57',
+        mustard: '#fcd757',
+        aero: '#11b5e4',
+        richBlack: '#051014',
+        hollywoodCerise: '#ec058e',
+        iris: '#4f54ba',
+        tropicalIndigo: '#898ed1',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

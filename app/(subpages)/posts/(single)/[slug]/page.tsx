@@ -1,9 +1,9 @@
-import PostBody from '@/app/_components/posts/PostBody'
-import { getPosts, getPost } from '@/app/actions/posts'
-import PostMeta from '@/app/_components/posts/PostMeta'
-import DoubleSeparator from '@/app/_components/DoubleSeparator'
-import PostCategories from '@/app/_components/posts/PostCategories'
-import SanityImage from '@/app/_components/SanityImage'
+import PostBody from '@/app/_components/shared/posts/PostBody'
+import { getPost } from '@/app/actions/posts'
+import PostMeta from '@/app/_components/shared/posts/PostMeta'
+import PostCategories from '@/app/_components/shared/posts/PostCategories'
+import SanityImage from '@/app/_components/shared/SanityImage'
+import ContentSection from '@/app/_components/shared/ContentSection'
 
 export default async function SinglePost({
   params,
@@ -12,9 +12,9 @@ export default async function SinglePost({
 }) {
   const posts = await getPost(params.slug)
   const post = posts[0]
-  console.log('single post: ', post)
+
   return (
-    <div>
+    <ContentSection contentClasses="max-w-[800px] mx-auto">
       <div>
         <PostCategories
           categories={post.categories}
@@ -41,14 +41,6 @@ export default async function SinglePost({
         isExcerpt={false}
         slug={post.slug}
       />
-    </div>
+    </ContentSection>
   )
-}
-
-export async function generateStaticParams() {
-  const posts = await getPosts()
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
 }

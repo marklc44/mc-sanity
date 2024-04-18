@@ -1,7 +1,7 @@
 'use client'
 import PostCard from './PostCard'
 import PostListItem from './PostListItem'
-import CategoryFilterBar from '../CategoryFilterBar'
+import CategoryFilterBar from './CategoryFilterBar'
 import { Post } from '@/types/Post'
 import { useEffect, useMemo, useState } from 'react'
 import { Category } from '@/types/Category'
@@ -9,26 +9,36 @@ import { getAllCategoriesFromPosts } from '@/utils/category-utils'
 import classNames from 'classnames'
 
 interface Props {
-  posts: Post[]
+  posts: Post[] | undefined
   view: 'list' | 'grid'
+  preFilterCategory?: string
+  withFilters: boolean
+  limit?: number
 }
 
-export default function PostsGrid({ posts, view = 'list' }: Props) {
+export default function PostsGrid({
+  posts,
+  view = 'list',
+  preFilterCategory,
+  withFilters = true,
+  limit,
+}: Props) {
   const [displayCategories, setDisplayCategories] = useState<Category[]>([])
   const allCats = useMemo(() => {
-    return getAllCategoriesFromPosts(posts)
-  }, [posts])
+    if (!posts) return []
+    return getAllCategoriesFromPosts(posts, preFilterCategory)
+  }, [posts, preFilterCategory])
 
   useEffect(() => {
     setDisplayCategories(allCats)
-  }, [allCats])
+  }, [allCats, preFilterCategory])
 
   const handleCategoryChange = (category: Category, checked: boolean) => {
     //@ts-ignore
     setDisplayCategories((prev) => {
-      const isCatInDisplay = prev.includes(category)
+      const isCatInDisplay = prev?.includes(category)
       if (isCatInDisplay && !checked) {
-        return prev.filter((cat) => cat !== category) as Category[]
+        return prev?.filter((cat) => cat !== category) as Category[]
       }
       if (!isCatInDisplay && checked) {
         const newCats = [...prev, category]
@@ -38,14 +48,21 @@ export default function PostsGrid({ posts, view = 'list' }: Props) {
   }
 
   const filteredPosts = useMemo(() => {
-    return posts?.filter((post) => {
-      return post?.categories?.some((cat) => {
-        return displayCategories.find((dcat) => {
-          return dcat._id === cat._id
+    return posts
+      ?.filter((post) => {
+        return post?.categories?.some((cat) => {
+          return displayCategories.find((dcat) => {
+            return dcat._id === cat._id
+          })
         })
       })
-    })
-  }, [posts, displayCategories])
+      .filter((post, idx) => {
+        if (limit) {
+          return idx < limit
+        }
+        return true
+      })
+  }, [posts, displayCategories, limit])
 
   const containerViewClasses = classNames(
     `grid`,
@@ -56,10 +73,12 @@ export default function PostsGrid({ posts, view = 'list' }: Props) {
 
   return (
     <>
-      <CategoryFilterBar
-        categories={allCats}
-        handleChange={handleCategoryChange}
-      />
+      {withFilters && (
+        <CategoryFilterBar
+          categories={allCats}
+          handleChange={handleCategoryChange}
+        />
+      )}
       <section className={containerViewClasses}>
         {filteredPosts?.map((post) => {
           return (

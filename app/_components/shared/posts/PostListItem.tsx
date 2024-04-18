@@ -14,7 +14,6 @@ interface Props {
 
 export default function PostListItem({ post, className }: Props) {
   const { title, categories, body, mainImage, slug } = post
-  console.log('post: ', post)
   const articleClasses = classNames(
     className,
     postStyles.postListItem,

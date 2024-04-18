@@ -17,7 +17,6 @@ const truncateExcerpt = (text: string | undefined, length: number) => {
 const ptComponents = {
   types: {
     image: ({ value }: any) => {
-      console.log('value: ', value)
       if (!value?.asset?._ref) {
         return null
       }

@@ -7,7 +7,6 @@ import PostCategories from './PostCategories'
 
 export default function PostCard({ post }: { post: Post }) {
   const { title, categories, body, mainImage, slug } = post
-  console.log('post: ', post)
   return (
     <article
       className={`postCard flex flex-col h-full rounded-lg mb-4 overflow-hidden content-between`}

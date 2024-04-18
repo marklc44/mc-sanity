@@ -12,6 +12,10 @@ export default function MainNavBar() {
     setMobileMenuOpen((prev) => !prev)
   }
 
+  const handleMobileNavClick = () => {
+    setMobileMenuOpen(false)
+  }
+
   const mobileMenuStateClasses = classNames(
     'mobileMenu',
     mobileMenuOpen ? 'mobileMenuOpen' : 'mobileMenuClosed'
@@ -22,12 +26,12 @@ export default function MainNavBar() {
       <div className="uppercase text-xl font-bold">
         <Link href="/">Mark Centoni</Link>
       </div>
-      <nav className="hidden md:block">
+      <nav className="hidden lg:block">
         <ul className={`list-none flex justify-around`}>
           <li className="mainNavLink">
             <Link
               className={`mainNavAnchor`}
-              href={`/`}
+              href={`/about`}
             >
               About
             </Link>
@@ -35,7 +39,7 @@ export default function MainNavBar() {
           <li className="mainNavLink">
             <Link
               className={`mainNavAnchor`}
-              href={`/`}
+              href={`/work`}
             >
               Work
             </Link>
@@ -51,25 +55,24 @@ export default function MainNavBar() {
           <li className="mainNavLink">
             <Link
               className={`mainNavAnchor`}
-              href={`#`}
+              href={`/services`}
             >
               Services
             </Link>
           </li>
         </ul>
       </nav>
-      <div className={`text-right hidden md:block`}>
+      <div className={`text-right hidden lg:block`}>
         <PillBtn
           text="Contact"
-          href="#"
+          href="/about"
         />
       </div>
 
       {/* Mobile menu */}
-      <div className="text-right block md:hidden">
+      <div className="text-right block lg:hidden">
         <div>
           <button
-            // className="btn btn-ghost"
             onClick={() => {
               toggleMobileMenu()
             }}
@@ -99,7 +102,10 @@ export default function MainNavBar() {
             <li>
               <Link
                 className={`mainNavAnchor`}
-                href={`/`}
+                href={`/about`}
+                onClick={() => {
+                  handleMobileNavClick()
+                }}
               >
                 About
               </Link>
@@ -108,6 +114,9 @@ export default function MainNavBar() {
               <Link
                 className={`mainNavAnchor`}
                 href={`/`}
+                onClick={() => {
+                  handleMobileNavClick()
+                }}
               >
                 Work
               </Link>
@@ -116,6 +125,9 @@ export default function MainNavBar() {
               <Link
                 className={`mainNavAnchor`}
                 href={`/posts`}
+                onClick={() => {
+                  handleMobileNavClick()
+                }}
               >
                 Articles
               </Link>
@@ -124,6 +136,9 @@ export default function MainNavBar() {
               <Link
                 className={`mainNavAnchor`}
                 href={`#`}
+                onClick={() => {
+                  handleMobileNavClick()
+                }}
               >
                 Services
               </Link>
@@ -133,6 +148,9 @@ export default function MainNavBar() {
                 <PillBtn
                   text="Contact"
                   href="#"
+                  handleClick={() => {
+                    handleMobileNavClick()
+                  }}
                 />
               </div>
             </li>

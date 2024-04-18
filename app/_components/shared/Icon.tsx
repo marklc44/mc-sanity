@@ -1,4 +1,3 @@
-import type { ForwardRefExoticComponent } from 'react'
 import {
   CommandLineIcon,
   BeakerIcon,
@@ -7,7 +6,7 @@ import {
   FunnelIcon,
   ShareIcon,
   QueueListIcon,
-} from '@heroicons/react/24/solid'
+} from '@heroicons/react/24/outline'
 
 interface Props {
   name?: string

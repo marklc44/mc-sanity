@@ -24,13 +24,26 @@ export default defineType({
     defineField({
       name: 'sectionImage',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
       fields: [
         {
           name: 'alt',
           type: 'string',
           title: 'Alternative Text',
         },
+        {
+          name: 'autoCrop',
+          type: 'boolean',
+          title: 'Should Autocrop'
+        }
       ],
+    }),
+    defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
     }),
     defineField({
       name: 'body',

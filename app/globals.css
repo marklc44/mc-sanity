@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --icterine: #eefc57;
+  --mustard: #fcd757;
+  --aero: #11b5e4;
+  --rich-black: #051014;
+  --hollywoodCerise: #ec058e;
+  --iris: #4f54ba;
+  --tropical-indigo: #898ed1;
+}
+
 html {
   font-family: var(--font-noto);
   @apply text-slate-900;
@@ -30,6 +40,9 @@ h4 {
 p {
   @apply mb-8 text-[18px] leading-[30px];
 }
+p.small {
+  @apply text-[16px] leading-[22px];
+}
 .eyebrow {
   font-family: var(--font-poppins);
   @apply text-sm uppercase text-slate-400 pb-1;
@@ -38,13 +51,13 @@ p {
 /* Hover transitions */
 
 .link {
-  @apply text-sky-600 hover:text-sky-400;
+  @apply text-iris hover:text-tropicalIndigo;
 }
 .mainNavLink {
   @apply py-2 px-6;
 }
 .mainNavAnchor {
-  @apply text-sky-600 hover:text-sky-300 active:text-sky-300 hover:transition-colors text-lg;
+  @apply text-iris hover:text-tropicalIndigo active:text-tropicalIndigo hover:transition-colors text-lg font-bold;
 }
 
 .mobileMenu {
@@ -56,4 +69,8 @@ p {
 }
 .mobileMenuOpen li {
   @apply mb-4;
+}
+
+.fullHeightContainer {
+  @apply min-h-[calc(100vh-286px)];
 }
