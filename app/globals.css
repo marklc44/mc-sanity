@@ -74,3 +74,23 @@ p.small {
 .fullHeightContainer {
   @apply min-h-[calc(100vh-286px)];
 }
+
+.activeNav {
+  @apply border-b-4 border-b-tropicalIndigo;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0 {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

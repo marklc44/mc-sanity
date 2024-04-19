@@ -20,6 +20,7 @@ export interface WorkSection {
   body: Body[]
   sectionImage: any
   client: Client
+  images?: Array<any>
 }
 
 export interface Client {

@@ -16,6 +16,7 @@ export default function AboutPage() {
                 <li className="mb-2">
                   <Link
                     className="link"
+                    target="_blank"
                     href="https://www.linkedin.com/in/markcentoni/"
                   >
                     Linkedin
@@ -24,6 +25,7 @@ export default function AboutPage() {
                 <li className="mb-2">
                   <Link
                     className="link"
+                    target="_blank"
                     href="https://www.oa-labs.co/"
                   >
                     O & A Labs
@@ -32,6 +34,7 @@ export default function AboutPage() {
                 <li className="mb-2">
                   <Link
                     className="link"
+                    target="_blank"
                     href="https://medium.com/@mark_centoni"
                   >
                     Medium
@@ -92,6 +95,11 @@ export default function AboutPage() {
                 mark@oa-labs.co
               </Link>
               .
+            </p>
+            <h3>About this site</h3>
+            <p>
+              This site was built with the Sanity.io CMS, React, Nextjs,
+              Typescript, Tailwindcss and hosted on Vercel.
             </p>
           </div>
         </div>

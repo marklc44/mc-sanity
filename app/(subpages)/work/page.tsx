@@ -4,7 +4,6 @@ import ClientSpotlight from '@/app/_components/shared/work/ClientSpotlight'
 
 export default async function WorkPage() {
   const works = await getWork()
-  console.log('works: ', works)
   return (
     <div className="fullHeightContainer">
       <ContentSection>
@@ -15,6 +14,7 @@ export default async function WorkPage() {
               <ClientSpotlight
                 key={`work-${work?._id}`}
                 workItem={work}
+                isExcerpt={true}
               />
             )
           })}

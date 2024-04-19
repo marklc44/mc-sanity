@@ -26,6 +26,7 @@ export const getWork = async (slug?: string): Promise<Work[] | undefined> => {
          client->,
          sectionImage,
          body,
+         images,
        },
        tools[]->
     }
@@ -52,7 +53,8 @@ export const getWorkSections = async (limit: number | null): Promise<WorkSection
     },
     excerpt,
     sectionImage,
-    body
+    body,
+    images,
  }
   `
   const limitClause = limit && limit > 0 ? `[0...${limit}]` : ''

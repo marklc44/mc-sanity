@@ -10,7 +10,6 @@ interface Props {
 }
 
 const filterTitle = (client: string, title: string) => {
-  console.log('client: ', client)
   if (client !== 'nextme') {
     return title
       .split(' ')
@@ -55,10 +54,13 @@ export default function WorkSection({ work }: Props) {
         </Link>
       </div>
       <div className="content basis-2/3 w-2/3">
-        <p className="mb-0 font-bold">{`${work.client.name}: ${filterTitle(
-          work.client.slug.current,
-          work.title
-        )}`}</p>
+        <Link href={singleLink}>
+          <p className="mb-0 font-bold">{`${work.client.name}: ${filterTitle(
+            work.client.slug.current,
+            work.title
+          )}`}</p>
+        </Link>
+
         <div>
           <p className={`small mb-3`}>{work.excerpt}</p>
         </div>

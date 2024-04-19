@@ -3,10 +3,12 @@ import Link from 'next/link'
 import PillBtn from './PillBtn'
 import { useRef, useState } from 'react'
 import classNames from 'classnames'
+import { usePathname } from 'next/navigation'
 
 export default function MainNavBar() {
   const mobileMenuRef = useRef(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prev) => !prev)
@@ -30,7 +32,10 @@ export default function MainNavBar() {
         <ul className={`list-none flex justify-around`}>
           <li className="mainNavLink">
             <Link
-              className={`mainNavAnchor`}
+              className={classNames(
+                `mainNavAnchor`,
+                pathname === '/about' ? 'activeNav' : null
+              )}
               href={`/about`}
             >
               About
@@ -38,7 +43,10 @@ export default function MainNavBar() {
           </li>
           <li className="mainNavLink">
             <Link
-              className={`mainNavAnchor`}
+              className={classNames(
+                `mainNavAnchor`,
+                pathname === '/work' ? 'activeNav' : null
+              )}
               href={`/work`}
             >
               Work
@@ -46,7 +54,10 @@ export default function MainNavBar() {
           </li>
           <li className="mainNavLink">
             <Link
-              className={`mainNavAnchor`}
+              className={classNames(
+                `mainNavAnchor`,
+                pathname === '/posts' ? 'activeNav' : null
+              )}
               href={`/posts`}
             >
               Articles
@@ -54,7 +65,10 @@ export default function MainNavBar() {
           </li>
           <li className="mainNavLink">
             <Link
-              className={`mainNavAnchor`}
+              className={classNames(
+                `mainNavAnchor`,
+                pathname === '/services' ? 'activeNav' : null
+              )}
               href={`/services`}
             >
               Services

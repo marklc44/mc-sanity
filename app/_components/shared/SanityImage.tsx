@@ -55,7 +55,7 @@ export default function SanityImage({
       className={`min-w-full`}
       src={src || placeholderSrc}
       alt={alt}
-      width={calcWidth}
+      width={width}
       height={height}
       {...rest}
     />
