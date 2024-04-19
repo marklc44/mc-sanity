@@ -27,12 +27,9 @@ const ptComponents = {
           loading="lazy"
           height={value.height || 500}
           width={value.width || 500}
-          src={urlForImage(value, {
-            height: value.height || 500,
-            width: value.width || 500,
-          })}
+          src={urlForImage(value).url()}
           style={{
-            maxWidth: '100%',
+            width: '100%',
             marginBottom: '24px',
           }}
         />
@@ -41,15 +38,13 @@ const ptComponents = {
   },
 }
 
-export default function PostBody({
-  body,
-  isExcerpt,
-  slug,
-}: {
+interface Props {
   body: Body[]
-  isExcerpt: boolean
+  isExcerpt?: boolean
   slug: string
-}) {
+}
+
+export default function PostBody({ body, isExcerpt, slug }: Props) {
   const excerptText = isExcerpt
     ? truncateExcerpt(body?.[0]?.children?.[0]?.text, 120)
     : null

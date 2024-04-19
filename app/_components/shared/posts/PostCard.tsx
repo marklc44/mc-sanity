@@ -18,10 +18,11 @@ export default function PostCard({ post }: { post: Post }) {
               image={mainImage}
               height={200}
               width={200}
-              alt="distracted child"
+              alt={mainImage.alt}
               loading="lazy"
               style={{
                 maxHeight: '300px',
+                minHeight: '300px',
                 objectFit: 'cover',
               }}
             />

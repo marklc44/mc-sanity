@@ -14,7 +14,7 @@ export default async function SinglePost({
   const post = posts[0]
 
   return (
-    <ContentSection contentClasses="max-w-[800px] mx-auto">
+    <ContentSection contentClasses="max-w-[900px] lg:max-w-[900px] mx-auto">
       <div>
         <PostCategories
           categories={post.categories}
@@ -26,15 +26,6 @@ export default async function SinglePost({
         author={post.authorName}
         pubDate={post.publishedAt}
       />
-      <section className="mb-8">
-        <SanityImage
-          image={post.mainImage}
-          height={1080}
-          width={1080}
-          alt="distracted child"
-          priority={true}
-        />
-      </section>
 
       <PostBody
         body={post.body}

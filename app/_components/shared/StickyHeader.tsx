@@ -16,6 +16,7 @@ export default function StickyHeader({ children }: { children: ReactNode }) {
   }
 
   useLayoutEffect(() => {
+    addScrollClasses()
     window.addEventListener('scroll', addScrollClasses)
     return () => window.removeEventListener('scroll', addScrollClasses)
   }, [headerRef])

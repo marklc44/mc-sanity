@@ -9,7 +9,7 @@ import { getAllCategoriesFromPosts } from '@/utils/category-utils'
 import classNames from 'classnames'
 
 interface Props {
-  posts: Post[] | undefined
+  posts?: Post[]
   view: 'list' | 'grid'
   preFilterCategory?: string
   withFilters: boolean
