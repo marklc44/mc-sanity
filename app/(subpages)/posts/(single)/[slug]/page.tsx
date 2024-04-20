@@ -3,6 +3,8 @@ import { getPost } from '@/app/actions/posts'
 import PostMeta from '@/app/_components/shared/posts/PostMeta'
 import PostCategories from '@/app/_components/shared/posts/PostCategories'
 import ContentSection from '@/app/_components/shared/ContentSection'
+import Link from 'next/link'
+import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 
 export default async function SinglePost({
   params,
@@ -14,6 +16,13 @@ export default async function SinglePost({
 
   return (
     <ContentSection contentClasses="max-w-[900px] lg:max-w-[900px] mx-auto">
+      <Link
+        className="block link mb-8"
+        href="/posts"
+      >
+        <ArrowLeftIcon className={`text-sm w-4 inline-block translate-x-1`} />{' '}
+        Back to all posts
+      </Link>
       <div>
         <PostCategories
           categories={post.categories}
