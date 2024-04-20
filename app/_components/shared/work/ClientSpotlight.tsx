@@ -53,9 +53,9 @@ export default function ClientSpotlight({ workItem, isExcerpt }: Props) {
           <span>
             <Link
               className="link"
-              href={client.url}
+              href={client.url as string}
             >
-              {stripProtocol(client.url)}
+              {stripProtocol(client.url as string)}
             </Link>
           </span>
         </div>
