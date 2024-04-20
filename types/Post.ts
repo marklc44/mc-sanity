@@ -9,6 +9,8 @@ export interface Post {
   body: Body[]
   categories: Category[]
   authorName: string
+  canonicalUrl?: string
+  excerpt?: string
   author: Author
   _updatedAt: string // parse to date, use as pub date
 }

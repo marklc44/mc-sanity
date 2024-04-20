@@ -20,6 +20,17 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'canonicalUrl',
+      title: 'Canonical URL',
+      type: 'string',
+    }),
+    defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      description: 'This will be used as the meta description for posts.'
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',

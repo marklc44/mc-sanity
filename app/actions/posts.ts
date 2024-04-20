@@ -32,6 +32,8 @@ export const getPost = async (slug: string) => {
     publishedAt,
     mainImage,
     "authorName": author->name,
+    canonicalUrl,
+    excerpt,
     categories[] ->{
       _id,
       title
