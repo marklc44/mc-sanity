@@ -19,6 +19,7 @@ export default function PostCard({ post }: { post: Post }) {
               height={200}
               width={200}
               alt={mainImage.alt}
+              // @ts-ignore
               loading="lazy"
               style={{
                 maxHeight: '300px',

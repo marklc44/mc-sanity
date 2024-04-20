@@ -2,7 +2,6 @@ import PostBody from '@/app/_components/shared/posts/PostBody'
 import { getPost } from '@/app/actions/posts'
 import PostMeta from '@/app/_components/shared/posts/PostMeta'
 import PostCategories from '@/app/_components/shared/posts/PostCategories'
-import SanityImage from '@/app/_components/shared/SanityImage'
 import ContentSection from '@/app/_components/shared/ContentSection'
 
 export default async function SinglePost({

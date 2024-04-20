@@ -14,6 +14,7 @@ export default function Carousel({ items }: Props) {
     () => items.filter((item) => item.asset?._ref),
     [items]
   )
+  console.log('alt: ', items[0])
 
   /**
    *
@@ -69,7 +70,7 @@ export default function Carousel({ items }: Props) {
                   src={urlForImage(item).width(60).height(60).fit('max').url()}
                   width={60}
                   height={60}
-                  alt={`${item.asset?.alt} thumbnail` || 'thumbnail'}
+                  alt={`${item.alt} thumbnail` || 'thumbnail'}
                 />
               </div>
             )

@@ -1,13 +1,8 @@
 import { Body } from '@/types/Post'
 import PostExcerpt from './PostExcerpt'
 import { PortableText } from '@portabletext/react'
-import SanityImage from '../SanityImage'
-import { ReactNode } from 'react'
 import { urlForImage } from '@/sanity/lib/image'
 import Image from 'next/image'
-/**
- * Might need to handle different html elements, so push display down to block/image components
- */
 
 const truncateExcerpt = (text: string | undefined, length: number) => {
   if (!text) return ''

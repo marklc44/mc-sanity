@@ -36,7 +36,6 @@ export default function WorkSectionFull({ work, index }: Props) {
     'flex gap-16 flex-wrap lg:flex-nowrap items-center border-b-2 border-slate-100 pb-16',
     index % 2 !== 0 ? 'flex-row-reverse' : 'flex-row'
   )
-  console.log('work: ', work)
 
   return (
     <div
