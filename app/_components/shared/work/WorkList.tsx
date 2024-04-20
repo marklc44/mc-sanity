@@ -41,6 +41,7 @@ export default async function WorkList({ clientFilter, limit }: Props) {
                         height={400}
                         width={400}
                         alt={work.sectionImage?.alt || 'an image'}
+                        // @ts-ignore
                         loading="lazy"
                         style={{
                           width: '100%',

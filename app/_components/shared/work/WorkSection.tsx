@@ -43,6 +43,7 @@ export default function WorkSection({ work }: Props) {
               width={400}
               alt={work.sectionImage?.alt || 'an image'}
               autoCrop={work.sectionImage.autoCrop}
+              // @ts-ignore
               loading="lazy"
               style={{
                 width: '100%',
