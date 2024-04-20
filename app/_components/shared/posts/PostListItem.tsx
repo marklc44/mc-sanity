@@ -54,6 +54,7 @@ export default function PostListItem({ post, className }: Props) {
               height={300}
               width={300}
               alt="distracted child"
+              // @ts-ignore
               loading="lazy"
               style={{
                 width: '150px',
