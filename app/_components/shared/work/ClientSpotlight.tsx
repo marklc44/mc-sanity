@@ -31,6 +31,7 @@ export default function ClientSpotlight({ workItem, isExcerpt }: Props) {
             height={logoDimensions.height}
             width={logoDimensions.width}
             alt={client?.name || 'client'}
+            //@ts-ignore
             priority={true}
             style={{
               maxHeight: `${logoDimensions.height}px`,
