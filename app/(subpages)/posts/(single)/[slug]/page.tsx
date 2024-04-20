@@ -5,7 +5,7 @@ import PostCategories from '@/app/_components/shared/posts/PostCategories'
 import ContentSection from '@/app/_components/shared/ContentSection'
 import Link from 'next/link'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
-import { Metadata, ResolvingMetadata } from 'next'
+import { ResolvingMetadata } from 'next'
 
 interface Props {
   params: { slug: string }

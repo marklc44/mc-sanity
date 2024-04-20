@@ -3,5 +3,7 @@ export default function SubpageLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <div className={`pt-[100px] lg:pt-[200px]`}>{children}</div>
+  return (
+    <div className={`pt-[100px] lg:pt-[200px] min-h-screen`}>{children}</div>
+  )
 }

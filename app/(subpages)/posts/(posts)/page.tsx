@@ -5,7 +5,7 @@ import ContentSection from '@/app/_components/shared/ContentSection'
 export default async function PostsPage() {
   const posts = await getPosts()
   return (
-    <>
+    <div className="'min-h-screen'">
       <ContentSection>
         <h1>Articles</h1>
         <PostsGrid
@@ -14,6 +14,6 @@ export default async function PostsPage() {
           withFilters={true}
         />
       </ContentSection>
-    </>
+    </div>
   )
 }

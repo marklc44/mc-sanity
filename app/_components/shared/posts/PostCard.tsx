@@ -30,7 +30,7 @@ export default function PostCard({ post }: { post: Post }) {
           </Link>
         )}
       </div>
-      <div className={`content flex flex-col content-between p-4`}>
+      <div className={`content flex flex-col content-between py-4`}>
         <section>
           <div>
             <PostCategories
