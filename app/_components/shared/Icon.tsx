@@ -36,6 +36,7 @@ const iconComponents = {
 
 export default function Icon({ name, className }: Props) {
   // second part of the hack
+  // @ts-ignore
   const GenericIcon = name && iconComponents[name]
 
   return (

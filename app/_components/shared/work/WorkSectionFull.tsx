@@ -1,6 +1,4 @@
 import { WorkSection } from '@/types/Work'
-import SanityImage from '../SanityImage'
-import Link from 'next/link'
 import workStyles from '@/app/_styles/WorkList.module.css'
 import classNames from 'classnames'
 import PostBody from '../posts/PostBody'
