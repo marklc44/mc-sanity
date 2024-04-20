@@ -17,7 +17,7 @@ export default function PostListItem({ post, className }: Props) {
   const articleClasses = classNames(
     className,
     postStyles.postListItem,
-    `postCard flex flex-row h-full overflow-hidden place-content-between`
+    `postCard flex flex-row h-full overflow-hidden place-content-between pb-8 lg:pb-0`
   )
   return (
     <article className={articleClasses}>
