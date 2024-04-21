@@ -23,7 +23,7 @@ export default function WorkSection({ work }: Props) {
   const singleLink = `/work/${work.client.slug.current}`
   const itemClasses = classNames(
     workStyles.workListItemClear,
-    'flex flex-row gap-8'
+    'flex flex-row flex-wrap lg:flex-nowrap gap-8'
   )
 
   return (
@@ -31,7 +31,7 @@ export default function WorkSection({ work }: Props) {
       key={`work-${work._id}`}
       className={itemClasses}
     >
-      <div className="header basis-1/3 w-1/3">
+      <div className="header basis-full lg:basis-1/3 w-full lg:w-1/3">
         <Link
           href={singleLink}
           className="block shadow-lg"
@@ -54,7 +54,7 @@ export default function WorkSection({ work }: Props) {
           )}
         </Link>
       </div>
-      <div className="content basis-2/3 w-2/3">
+      <div className="content basis-full lg:basis-2/3 w-full lg:w-2/3">
         <Link href={singleLink}>
           <p className="mb-0 font-bold">{`${work.client.name}: ${filterTitle(
             work.client.slug.current,

@@ -72,7 +72,7 @@ export default async function Home() {
         </ContentSection>
         <ContentSection containerClasses="py-24">
           <h2>Posts</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 lg:grid-rows-2 gap-8 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
             <div className="col-span-1">
               <h4>Tech</h4>
               <PostsGrid

@@ -121,6 +121,17 @@ export default function MainNavBar() {
             <li>
               <Link
                 className={`mainNavAnchor`}
+                href={`/`}
+                onClick={() => {
+                  handleMobileNavClick()
+                }}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={`mainNavAnchor`}
                 href={`/about`}
                 onClick={() => {
                   handleMobileNavClick()
@@ -132,7 +143,7 @@ export default function MainNavBar() {
             <li>
               <Link
                 className={`mainNavAnchor`}
-                href={`/`}
+                href={`/work`}
                 onClick={() => {
                   handleMobileNavClick()
                 }}
@@ -154,7 +165,7 @@ export default function MainNavBar() {
             <li>
               <Link
                 className={`mainNavAnchor`}
-                href={`#`}
+                href={`/services`}
                 onClick={() => {
                   handleMobileNavClick()
                 }}
@@ -166,7 +177,7 @@ export default function MainNavBar() {
               <div>
                 <PillBtn
                   text="Contact"
-                  href="#"
+                  href="/about"
                   handleClick={() => {
                     handleMobileNavClick()
                   }}

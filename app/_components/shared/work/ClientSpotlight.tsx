@@ -40,7 +40,7 @@ export default function ClientSpotlight({ workItem, isExcerpt }: Props) {
           />
         </div>
       </div>
-      <div className="flex gap-4 my-8 border-t-[1px] border-b-[1px] border-gray-200 py-4 justify-between">
+      <div className="flex flex-wrap gap-4 my-8 border-t-[1px] border-b-[1px] border-gray-200 py-4 justify-between">
         <div className="flex flex-row gap-4">
           <span className="font-bold">Roles:</span>{' '}
           {roles &&
@@ -54,6 +54,7 @@ export default function ClientSpotlight({ workItem, isExcerpt }: Props) {
             <Link
               className="link"
               href={client.url as string}
+              target="_blank"
             >
               {stripProtocol(client.url as string)}
             </Link>
@@ -61,7 +62,7 @@ export default function ClientSpotlight({ workItem, isExcerpt }: Props) {
         </div>
       </div>
 
-      <p className="text-center px-8">{description}</p>
+      <p className="text-left lg:text-center px-0 lg:px-8">{description}</p>
       <div className={workSectionClasses}>
         {workSections &&
           workSections.map((item, idx) => {

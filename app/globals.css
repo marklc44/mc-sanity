@@ -58,7 +58,7 @@ article ul {
 }
 .eyebrow {
   font-family: var(--font-poppins);
-  @apply text-sm uppercase text-slate-400 pb-1;
+  @apply text-base lg:text-sm uppercase text-slate-600 pb-1;
 }
 
 /* Hover transitions */
@@ -75,11 +75,11 @@ article ul {
 }
 
 .mobileMenu {
-  @apply w-full h-0 overflow-hidden transition-all;
+  @apply absolute top-[91px] left-0 w-full h-0 px-[10%] overflow-hidden transition-all bg-white;
 }
 
 .mobileMenuOpen {
-  @apply h-screen pt-12;
+  @apply absolute top-[91px] left-0 w-full h-screen pt-12 px-[10%];
 }
 .mobileMenuOpen li {
   @apply mb-4;

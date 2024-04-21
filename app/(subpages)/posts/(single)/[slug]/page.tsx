@@ -44,7 +44,7 @@ export default async function SinglePost({
 
   return (
     <>
-      <ContentSection contentClasses="max-w-[900px] lg:max-w-[900px] mx-auto">
+      <ContentSection contentClasses="px-[5%] lg:px-0 max-w-[900px] lg:max-w-[900px] mx-auto">
         <Link
           className="block link mb-8"
           href="/posts"

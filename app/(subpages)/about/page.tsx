@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <div className="fullHeightContainer">
       <ContentSection>
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start justify-center px-8 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start justify-center px-[5%] lg:px-0">
           <div className="col-span-1 flex flex-col justify-center items-center">
             {/* <span className="rounded-full w-24 h-24 bg-gray-300 mb-8"></span> */}
             <div
