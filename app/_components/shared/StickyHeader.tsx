@@ -24,7 +24,7 @@ export default function StickyHeader({ children }: { children: ReactNode }) {
   return (
     <header
       ref={headerRef}
-      className={`p-8 z-50 flex flex-row flex-wrap justify-between align-middle fixed w-full transition-all bg-transparent border-b-0`}
+      className={`px-[5%] lg:px-8 p-8 z-50 flex flex-row flex-wrap justify-between align-middle fixed w-full transition-all bg-transparent border-b-0`}
     >
       {children}
     </header>

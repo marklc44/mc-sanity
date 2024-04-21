@@ -13,7 +13,7 @@ export default async function ServicesPage() {
           services.map((service) => {
             return (
               <div
-                className="basis-1/3"
+                className="basis-full lg:basis-1/3"
                 key={`service-${service._id}`}
               >
                 <Service service={service} />
