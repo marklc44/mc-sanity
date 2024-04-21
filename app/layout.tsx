@@ -35,7 +35,7 @@ export default function RootLayout({
         className={classNames(
           noto.className,
           poppins.className,
-          'min-h-screen'
+          'min-h-screen bg-white'
         )}
       >
         <StickyHeader>
