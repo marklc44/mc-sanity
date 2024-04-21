@@ -14,7 +14,8 @@
 
 html {
   font-family: var(--font-noto);
-  @apply text-slate-900 bg-white;
+  @apply text-slate-900;
+  background-color: #fff;
 }
 
 h1 {
