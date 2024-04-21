@@ -1,8 +1,8 @@
 .workListItem {
-  @apply bg-slate-50 rounded-xl px-8 py-8;
+  @apply bg-slate-100 rounded-xl px-8 py-8;
 }
 .workListItemClear {
-  @apply rounded-xl;
+  @apply rounded-none;
 }
 .workListItem::first-child {
   border-top: 0 solid transparent;

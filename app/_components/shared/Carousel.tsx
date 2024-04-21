@@ -14,7 +14,6 @@ export default function Carousel({ items }: Props) {
     () => items.filter((item) => item.asset?._ref),
     [items]
   )
-  console.log('alt: ', items[0])
 
   /**
    *
@@ -33,7 +32,7 @@ export default function Carousel({ items }: Props) {
       <div className="w-full">
         <div
           id={`item-${activeImage?.asset?._ref}`}
-          className="w-full h-[400px] overflow-hidden bg-slate-50"
+          className="w-full h-[400px] overflow-hidden bg-slate-100"
           ref={activeImageRef}
           style={{
             backgroundImage: `url(${urlForImage(activeImage)
@@ -44,7 +43,6 @@ export default function Carousel({ items }: Props) {
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
-            // transition: 'opacity 1s ease-in-out',
           }}
         ></div>
         <p className="font-bold text-sm text-center mt-2">

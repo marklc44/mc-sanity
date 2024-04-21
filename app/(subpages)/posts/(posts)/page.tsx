@@ -7,7 +7,7 @@ export default async function PostsPage() {
   return (
     <div className="'min-h-screen'">
       <ContentSection>
-        <h1>Articles</h1>
+        <h1>Posts</h1>
         <PostsGrid
           posts={posts}
           view="grid"

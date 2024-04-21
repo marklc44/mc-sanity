@@ -4,6 +4,7 @@ import PillBtn from './PillBtn'
 import { useRef, useState } from 'react'
 import classNames from 'classnames'
 import { usePathname } from 'next/navigation'
+import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/outline'
 
 export default function MainNavBar() {
   const mobileMenuRef = useRef(null)
@@ -65,7 +66,7 @@ export default function MainNavBar() {
               )}
               href={`/posts`}
             >
-              Articles
+              Posts
             </Link>
           </li>
           <li className="mainNavLink">
@@ -96,19 +97,8 @@ export default function MainNavBar() {
               toggleMobileMenu()
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
+            {!mobileMenuOpen && <Bars3Icon className={`text-lg w-6`} />}
+            {mobileMenuOpen && <XMarkIcon className={`text-lg w-6`} />}
           </button>
         </div>
       </div>
@@ -159,7 +149,7 @@ export default function MainNavBar() {
                   handleMobileNavClick()
                 }}
               >
-                Articles
+                Posts
               </Link>
             </li>
             <li>
