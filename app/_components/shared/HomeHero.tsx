@@ -5,7 +5,7 @@ export default function HomeHero() {
         Software <br />
         Engineer
       </h1>
-      <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-0 translate-y-0 lg:translate-y-[-26px]">
+      <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-0 translate-y-0 lg:translate-y-[-26px] text-black">
         <span>Consultant</span>
         <span>Business Owner</span>
         <span>Neuroscience Enthusiast</span>

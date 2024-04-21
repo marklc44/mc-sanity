@@ -26,7 +26,12 @@ export default function MainNavBar() {
   return (
     <>
       <div className="uppercase text-xl font-bold">
-        <Link href="/">Mark Centoni</Link>
+        <Link
+          className="text-black"
+          href="/"
+        >
+          Mark Centoni
+        </Link>
       </div>
       <nav className="hidden lg:block">
         <ul className={`list-none flex justify-around`}>

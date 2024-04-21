@@ -1,4 +1,4 @@
-import HomeHero from './_components/HomeHero'
+import HomeHero from './_components/shared/HomeHero'
 import WorkList from './_components/shared/work/WorkList'
 import PillBtn from './_components/shared/PillBtn'
 import ServicesList from './_components/shared/work/ServicesList'
