@@ -93,7 +93,7 @@ export default async function Home() {
                 limit={2}
               />
             </div>
-            <div className="col-span-1">
+            {/* <div className="col-span-1">
               <h4>Neuroscience</h4>
               <PostsGrid
                 posts={posts}
@@ -102,7 +102,7 @@ export default async function Home() {
                 preFilterCategory="Neuroscience"
                 limit={2}
               />
-            </div>
+            </div> */}
 
             <div className="col-span-1">
               <div className="flex justify-center items-center bg-slate-100 rounded-xl p-8 h-auto lg:h-full">
