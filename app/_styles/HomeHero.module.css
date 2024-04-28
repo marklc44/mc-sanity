@@ -1,5 +1,9 @@
 .motionGradientBg {
-  background: linear-gradient(45deg, #fcd757, #eefc57 50%, #fcd757 60%);
+  /* background: linear-gradient(45deg, #fcd757, #eefc57 50%, #fcd757 60%); */
+  /* background: linear-gradient(45deg, #b30089, #f62dae 50%, #b30089 60%); */
+  background: linear-gradient(45deg, #ff3c38, #ff8c42 50%, #ff3c38 60%);
+  /* background: linear-gradient(45deg, #c7c7a6, #eaffda 50%, #c7c7a6 60%); */
+  /* background: #ca9ce1; */
   animation: gradient 12s ease infinite alternate;
   background-size: 400% 400%;
 }

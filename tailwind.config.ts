@@ -24,6 +24,7 @@ const config: Config = {
         hollywoodCerise: '#ec058e',
         iris: '#4f54ba',
         tropicalIndigo: '#898ed1',
+        russianViolet: '#390040',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
