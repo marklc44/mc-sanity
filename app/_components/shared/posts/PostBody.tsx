@@ -38,7 +38,7 @@ const ptComponents = {
   },
   marks: {
     inlineCode: ({ children }: any) => {
-      return <CodeInline children={children} />
+      return <CodeInline value={children} />
     },
   },
 }
