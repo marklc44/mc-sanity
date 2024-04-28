@@ -1,7 +1,7 @@
 export default function CodeInline({ value }: any) {
   return (
     <>
-      {value?.map((child, idx) => (
+      {value?.map((child: string, idx: number) => (
         <span
           key={`${child}-${idx}`}
           className="inlineCode"
