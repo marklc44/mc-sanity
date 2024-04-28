@@ -1,0 +1,47 @@
+/* purple: rgba(130, 2, 99, 1) */
+.radialGrad {
+  /* background: rgba(130, 2, 99, 1); */
+  width: 500px;
+  height: 500px;
+  animation: radGrad 0.5s ease-in-out 1s infinite alternate;
+  /* mix-blend-mode: hard-light; */
+}
+
+@keyframes radGrad {
+  0% {
+    background: rgba(130, 2, 99, 1);
+  }
+  20% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.25) 0,
+      rgba(130, 2, 99, 1) 10%
+    );
+  }
+  50% {
+    background: radial-gradient(
+      circle at center,
+      rgba(130, 2, 99, 1) 0,
+      rgba(255, 255, 255, 0.25) 10%,
+      rgba(130, 2, 99, 1) 30%
+    );
+  }
+  70% {
+    background: radial-gradient(
+      circle at center,
+      rgba(130, 2, 99, 1) 0,
+      rgba(255, 255, 255, 0.25) 20%,
+      rgba(130, 2, 99, 1) 50%
+    );
+  }
+  80% {
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.25) 0,
+      rgba(130, 2, 99, 1) 50%
+    );
+  }
+  100% {
+    background: rgba(130, 2, 99, 1);
+  }
+}

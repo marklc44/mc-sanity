@@ -60,6 +60,15 @@ article ul {
   font-family: var(--font-poppins);
   @apply text-base lg:text-sm uppercase text-slate-600 pb-1;
 }
+pre {
+  margin-bottom: 2em;
+}
+.inlineCode,
+span[data-mark='inlineCode'] {
+  display: inline-block;
+  font-family: monospace;
+  @apply bg-slate-100;
+}
 
 /* Hover transitions */
 

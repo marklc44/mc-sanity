@@ -1,4 +1,5 @@
-import {defineType, defineArrayMember} from 'sanity'
+import { defineType, defineArrayMember } from 'sanity'
+import CodeInline from '@/app/_components/shared/CodeInline'
 
 /**
  * This is the schema type for block content used in the post document type
@@ -24,23 +25,33 @@ export default defineType({
       // you want, and decide how you want to deal with it where you want to
       // use your content.
       styles: [
-        {title: 'Normal', value: 'normal'},
-        {title: 'H1', value: 'h1'},
-        {title: 'H2', value: 'h2'},
-        {title: 'H3', value: 'h3'},
-        {title: 'H4', value: 'h4'},
+        { title: 'Normal', value: 'normal' },
+        { title: 'H1', value: 'h1' },
+        { title: 'H2', value: 'h2' },
+        { title: 'H3', value: 'h3' },
+        { title: 'H4', value: 'h4' },
         { title: 'Quote', value: 'blockquote' },
-        {title: 'Caption', value: 'figcaption'},
+        { title: 'Caption', value: 'figcaption' },
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
+      lists: [{ title: 'Bullet', value: 'bullet' }],
       // Marks let you mark up inline text in the Portable Text Editor
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting
         decorators: [
-          {title: 'Strong', value: 'strong'},
+          { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
-          { title: 'Caption', value: 'caption'},
+          {
+            title: 'Caption',
+            value: 'caption',
+            icon: () => 'CAP'
+          },
+          {
+            title: 'Inline Code',
+            value: 'inlineCode',
+            icon: () => '</>',
+            // component: CodeInline,
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -64,7 +75,7 @@ export default defineType({
     // as a block type.
     defineArrayMember({
       type: 'image',
-      options: {hotspot: true},
+      options: { hotspot: true },
       fields: [
         {
           name: 'alt',
@@ -81,7 +92,10 @@ export default defineType({
           type: 'number',
           title: 'Width',
         },
-      ]
+      ],
+    }),
+    defineArrayMember({
+      type: 'code',
     }),
   ],
 })

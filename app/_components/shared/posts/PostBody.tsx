@@ -3,6 +3,8 @@ import PostExcerpt from './PostExcerpt'
 import { PortableText } from '@portabletext/react'
 import { urlForImage } from '@/sanity/lib/image'
 import Image from 'next/image'
+import CodeBlock from '../CodeBlock'
+import CodeInline from '../CodeInline'
 
 const truncateExcerpt = (text: string | undefined, length: number) => {
   if (!text) return ''
@@ -30,6 +32,14 @@ const ptComponents = {
         />
       )
     },
+    code: ({ value }: any) => {
+      return <CodeBlock value={value} />
+    },
+  },
+  marks: {
+    inlineCode: ({ children }: any) => {
+      return <CodeInline children={children} />
+    },
   },
 }
 
@@ -46,7 +56,7 @@ export default function PostBody({ body, isExcerpt, slug }: Props) {
 
   return (
     <article>
-      {!isExcerpt && (
+      {!isExcerpt && body && (
         <PortableText
           value={body}
           components={ptComponents}
