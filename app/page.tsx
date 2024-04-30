@@ -1,4 +1,5 @@
-import HomeHero from './_components/shared/HomeHero'
+// import HomeHero from './_components/shared/HomeHero'
+import AnimatedHomeHero from './_components/shared/AnimatedHomeHero'
 import WorkList from './_components/shared/work/WorkList'
 import PillBtn from './_components/shared/PillBtn'
 import ServicesList from './_components/shared/work/ServicesList'
@@ -23,7 +24,7 @@ export default async function Home() {
           containerClasses={heroClassNames}
           contentClasses="pt-[48px] lg:pt-[100px]"
         >
-          <HomeHero />
+          <AnimatedHomeHero />
         </ContentSection>
         <ContentSection>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

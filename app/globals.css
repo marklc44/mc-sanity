@@ -70,6 +70,10 @@ span[data-mark='inlineCode'] {
   @apply bg-slate-100;
 }
 
+.animationContainer span {
+  display: inline-block;
+}
+
 /* Hover transitions */
 
 .link,
