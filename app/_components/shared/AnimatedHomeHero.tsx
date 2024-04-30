@@ -31,7 +31,7 @@ export default function AnimatedHomeHero() {
     (context, contextSafe) => {
       const mRight = '0.5em'
       const cursorBlinkRate = 0.75
-      const cursorRepeat = 1
+      const cursorRepeat = 0.5
       const immediateAppearance = 0.05
 
       let tl = gsap.timeline()
