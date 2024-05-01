@@ -16,9 +16,14 @@
   /* background: linear-gradient(45deg, #ff3c38, #ff8c42 50%, #ff3c38 60%); */
   /* background: linear-gradient(45deg, #c7c7a6, #eaffda 50%, #c7c7a6 60%); */
   /* background: #ff8c42; */
-  animation: gradient 12s ease infinite alternate;
-  background-size: 400% 400%;
-  @apply bg-[#CAE9FF];
+  /* animation: gradient 12s ease infinite alternate;
+  background-size: 400% 400%; */
+  background: linear-gradient(
+    to bottom,
+    rgba(202, 233, 255, 1) 50%,
+    rgba(202, 233, 255, 0.65) 70%
+  );
+  background-size: 100% 100%;
 }
 
 @keyframes gradient {
