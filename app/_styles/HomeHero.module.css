@@ -18,7 +18,7 @@
   /* background: #ff8c42; */
   animation: gradient 12s ease infinite alternate;
   background-size: 400% 400%;
-  @apply bg-[#FBAF00];
+  @apply bg-slate-100;
 }
 
 @keyframes gradient {

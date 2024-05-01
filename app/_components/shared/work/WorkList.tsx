@@ -15,7 +15,7 @@ export default async function WorkList({ clientFilter, limit }: Props) {
   const workSections = await getWorkSections(0)
   const itemClasses = classNames(
     workStyles.workListItem,
-    'flex flex-row flex-wrap lg:flex-nowrap gap-8'
+    'flex flex-row flex-wrap shadow-xl lg:flex-nowrap gap-8'
   )
   const filteredWorks = workSections?.filter(
     (item) => item.client.clientSlug === clientFilter

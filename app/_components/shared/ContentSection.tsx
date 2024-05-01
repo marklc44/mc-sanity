@@ -15,7 +15,7 @@ export default function ContentSection({
   const outerClasses = classNames(containerClasses, 'py-12')
   const innerClasses = classNames(
     contentClasses,
-    'max-w-[90%] lg:max-w-[85em] mx-auto'
+    'max-w-[90%] md:max-w-[90vw] lg:max-w-[85em] lg:px-[40px] mx-auto'
   )
 
   return (
