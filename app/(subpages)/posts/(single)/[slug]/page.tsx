@@ -1,5 +1,5 @@
 import PostBody from '@/app/_components/shared/posts/PostBody'
-import { getPost } from '@/app/actions/posts'
+import { getPost, getPosts } from '@/app/actions/posts'
 import PostMeta from '@/app/_components/shared/posts/PostMeta'
 import PostCategories from '@/app/_components/shared/posts/PostCategories'
 import ContentSection from '@/app/_components/shared/ContentSection'
@@ -9,6 +9,16 @@ import { ResolvingMetadata } from 'next'
 
 interface Props {
   params: { slug: string }
+}
+
+export async function generateStaticParams() {
+  const posts = await getPosts()
+
+  return posts?.map((post) => {
+    return {
+      slug: post.slug
+    }
+  })
 }
 
 export async function generateMetadata(
