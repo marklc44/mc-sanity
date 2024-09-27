@@ -11,6 +11,9 @@ interface Props {
   params: { slug: string }
 }
 
+export const revalidate = 3600
+export const dynamicParams = true
+
 export async function generateStaticParams() {
   const posts = await getPosts()
 
@@ -18,7 +21,7 @@ export async function generateStaticParams() {
     return {
       slug: post.slug
     }
-  })
+  }) || []
 }
 
 export async function generateMetadata(
