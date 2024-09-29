@@ -11,11 +11,16 @@ import Badge from './_components/shared/Badge'
 import heroStyles from '@/app/_styles/HomeHero.module.css'
 import classNames from 'classnames'
 import Link from 'next/link'
+import PostHogClient from './posthog'
 
 export default async function Home() {
   const posts = await getPosts()
   const tools = await getTools()
+  const flags = await getFlags()
   const heroClassNames = classNames(heroStyles.motionGradientBg)
+  const ctaHref = flags?.['primary-cta-email'] ? 
+    'mailto:marklc44@gmail.com?subject=Inquiry%20from%20markcentoni.com&body=I%20would%20like%20to%20discuss%20a%20project%20or%20question.' : 
+    '/about'
 
   return (
     <>
@@ -30,12 +35,12 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="col-span-1 lg:col-span-2">
               <p className="text-3xl tracking-tighter leading-relaxed mb-4">
-                I help startups and business owners build products, create value
+                I help startups and business owners quickly prototype and build products, create value
                 and maximize ROI, growth and wealth.
               </p>
               <PillBtn
                 text="Let's connect"
-                href={`/about`}
+                href={ctaHref}
               />
             </div>
           </div>
@@ -122,4 +127,11 @@ export default async function Home() {
       </section>
     </>
   )
+}
+
+async function getFlags() {
+  const posthog = PostHogClient()
+  const flags = await posthog.getAllFlags('test_user_1')
+
+  return flags
 }
