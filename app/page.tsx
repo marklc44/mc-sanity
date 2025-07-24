@@ -12,15 +12,18 @@ import heroStyles from '@/app/_styles/HomeHero.module.css'
 import classNames from 'classnames'
 import Link from 'next/link'
 import PostHogClient from './posthog'
+import Columns from './_components/shared/Columns'
+import { Button } from './_components/shared/Button'
+import { FaArrowRight } from 'react-icons/fa'
 
 export default async function Home() {
   const posts = await getPosts()
   const tools = await getTools()
   const flags = await getFlags()
   const heroClassNames = classNames(heroStyles.motionGradientBg)
-  const ctaHref = flags?.['primary-cta-email'] ? 
-    'mailto:marklc44@gmail.com?subject=Inquiry%20from%20markcentoni.com&body=I%20would%20like%20to%20discuss%20a%20project%20or%20question.' : 
-    '/about'
+  const ctaHref = flags?.['primary-cta-email']
+    ? 'mailto:marklc44@gmail.com?subject=Inquiry%20from%20markcentoni.com&body=I%20would%20like%20to%20discuss%20a%20project%20or%20question.'
+    : '/about'
 
   return (
     <>
@@ -29,21 +32,45 @@ export default async function Home() {
           containerClasses={heroClassNames}
           contentClasses="pt-[48px] lg:pt-[100px]"
         >
-          <AnimatedHomeHero />
+          <Columns>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="col-span-1 lg:col-span-2">
+                <h1>
+                  <span className="text-5xl leading-tight tracking-tighter mb-4">
+                    I help startups and businesses quickly prototype and build
+                    exceptional products
+                  </span>
+                </h1>
+                <p className="text-xl tracking-tighter leading-relaxed mb-4">
+                  Full-stack development, technical consulting, and MVP
+                  development for bootstrapped startups and small businesses.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-highlight hover:bg-highlight/90 text-highlight-foreground"
+                  >
+                    <Link href="/contact">
+                      Start Your Project
+                      <FaArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                  >
+                    <Link href="/work">View My Work</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <AnimatedHomeHero />
+          </Columns>
         </ContentSection>
         <ContentSection>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="col-span-1 lg:col-span-2">
-              <p className="text-3xl tracking-tighter leading-relaxed mb-4">
-                I help startups and business owners quickly prototype and build products, create value
-                and maximize ROI, growth and wealth.
-              </p>
-              <PillBtn
-                text="Let's connect"
-                href={ctaHref}
-              />
-            </div>
-          </div>
+          <>Something</>
         </ContentSection>
         <ContentSection containerClasses="pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 gap-x-24">
