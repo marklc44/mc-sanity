@@ -9,7 +9,9 @@ import Footer from './_components/shared/Footer'
 import { PHProvider } from './_components/providers/PostHogProvider'
 import dynamic from 'next/dynamic'
 
-const PostHogPageView = dynamic(() => import('./_components/providers/PostHogPageView'))
+const PostHogPageView = dynamic(
+  () => import('./_components/providers/PostHogPageView')
+)
 
 const noto = Noto_Sans({
   subsets: ['latin'],
@@ -53,9 +55,9 @@ export default function RootLayout({
           className={classNames(
             noto.className,
             poppins.className,
-            'min-h-screen bg-white'
+            'min-h-screen bg-white text-slate'
           )}
-          >
+        >
           <StickyHeader>
             <MainNavBar />
           </StickyHeader>

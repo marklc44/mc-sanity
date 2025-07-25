@@ -12,7 +12,7 @@ export default function ContentSection({
   containerClasses,
   contentClasses,
 }: Props) {
-  const outerClasses = classNames(containerClasses, 'py-12')
+  const outerClasses = classNames(containerClasses, 'pb-28')
   const innerClasses = classNames(
     contentClasses,
     'max-w-[90%] md:max-w-[90vw] lg:max-w-[85em] lg:px-[40px] mx-auto'
