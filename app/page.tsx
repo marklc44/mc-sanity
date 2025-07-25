@@ -6,7 +6,7 @@ import ServicesList from './_components/shared/work/ServicesList'
 import ContentSection from './_components/shared/ContentSection'
 import PostsGrid from './_components/shared/posts/PostsGrid'
 import { getPosts } from './actions/posts'
-import { getTools } from './actions/work'
+import { getTools, getWorkSections } from './actions/work'
 import { Badge } from './_components/shared/Badge'
 import heroStyles from '@/app/_styles/HomeHero.module.css'
 import classNames from 'classnames'
@@ -24,6 +24,13 @@ export default async function Home() {
   const posts = await getPosts()
   const tools = await getTools()
   const flags = await getFlags()
+  const workSections = await getWorkSections(0)
+
+  const filteredWorks = workSections?.filter(
+    (item) => item.client.clientSlug === 'nextme'
+  )
+
+  console.log('filteredWorks: ', filteredWorks)
   const heroClassNames = classNames(heroStyles.motionGradientBg)
   const ctaHref = flags?.['primary-cta-email']
     ? 'mailto:marklc44@gmail.com?subject=Inquiry%20from%20markcentoni.com&body=I%20would%20like%20to%20discuss%20a%20project%20or%20question.'
