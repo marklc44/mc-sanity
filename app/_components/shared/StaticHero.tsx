@@ -12,8 +12,11 @@ const StaticHero = () => {
             {/* <Badge variant="secondary">TypeScript</Badge> */}
           </div>
           <div className="space-y-2 font-mono text-sm">
-            <div className="text-highlight">const</div>
-            <div className="text-muted-foreground">developer = {`{`}</div>
+            <div>
+              <span className="text-highlight">const{' '}</span>
+              <span className="text-muted-foreground">developer = {'{'}</span>
+            </div>
+            
             <div className="pl-4 text-muted-foreground">
               name: &quot;Mark Centoni&quot;,
             </div>
@@ -41,7 +44,7 @@ const StaticHero = () => {
                 <br /> ...rest,
                 <br />],
             </div>
-            <div className="text-muted-foreground">{`}`}</div>
+            <div className="text-muted-foreground">{'}'}</div>
           </div>
         </div>
       </div>

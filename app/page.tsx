@@ -58,7 +58,7 @@ export default async function Home() {
                   build exceptional products
                 </span>
               </h1>
-              <p className="text-xl tracking-tighter leading-relaxed mb-4">
+              <p className="text-xl tracking-tight leading-relaxed text-muted-foreground mb-4">
                 Full-stack development, technical consulting, and MVP
                 development for bootstrapped startups and small businesses.
               </p>
