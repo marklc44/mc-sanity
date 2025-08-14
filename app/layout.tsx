@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Noto_Sans, Poppins } from 'next/font/google'
 import './globals.css'
 import classNames from 'classnames'
 import { GoogleTagManager } from '@next/third-parties/google'
@@ -12,16 +11,6 @@ import dynamic from 'next/dynamic'
 const PostHogPageView = dynamic(
   () => import('./_components/providers/PostHogPageView')
 )
-
-const noto = Noto_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-})
-const poppins = Poppins({
-  weight: ['600', '300'],
-  subsets: ['latin'],
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title:
@@ -53,8 +42,6 @@ export default function RootLayout({
       <PHProvider>
         <body
           className={classNames(
-            noto.className,
-            poppins.className,
             'min-h-screen bg-white text-slate'
           )}
         >

@@ -15,25 +15,31 @@ const StaticHero = () => {
             <div className="text-highlight">const</div>
             <div className="text-muted-foreground">developer = {`{`}</div>
             <div className="pl-4 text-muted-foreground">
-              name: "Mark Centoni",
+              name: &quot;Mark Centoni&quot;,
             </div>
             <div className="pl-4 text-muted-foreground">
-              focus: "Startup Success",
+              focus: &quot;Startup Success&quot;,
             </div>
             <div className="pl-4 text-muted-foreground">
               experience: [<br />
               <div className="pl-4">
-                "Software Engineer",
-                <br /> "Tech Lead",
-                <br /> "Manager",
+                &quot;Software Engineer&quot;,
+                <br /> &quot;Tech Lead&quot;,
+                <br /> &quot;Manager&quot;,
                 <br />
-                "Consultant"
+                &quot;Consultant&quot;
                 <br />
               </div>
               ],
             </div>
             <div className="pl-4 text-muted-foreground">
-              expertise: ["React", "Node.js", "Next.js", "SQL",...rest],
+              expertise: [
+                <br />&quot;React&quot;,
+                <br /> &quot;Node.js&quot;,
+                <br /> &quot;Next.js&quot;,
+                <br /> &quot;SQL&quot;,
+                <br /> ...rest,
+                <br />],
             </div>
             <div className="text-muted-foreground">{`}`}</div>
           </div>
