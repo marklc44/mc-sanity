@@ -95,7 +95,13 @@ h4 {
   @apply text-2xl mb-3;
 }
 p {
-  @apply mb-8 text-[18px] leading-[30px] text-slate-600;
+  @apply mb-4 text-[18px] leading-[30px] text-slate-600;
+}
+ul {
+  @apply list-disc list-inside;
+}
+li {
+  @apply text-[18px] leading-[24px] text-slate-600 mb-4;
 }
 p.small {
   @apply text-[16px] leading-[22px];

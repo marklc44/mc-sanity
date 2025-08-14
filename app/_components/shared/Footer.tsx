@@ -9,8 +9,6 @@ const navigation = [
 ]
 
 export default function Footer() {
-  const today = new Date()
-  const year = today.getFullYear()
 
   return (
     <footer className="flex flex-row gap-8 justify-around items-center p-8 bg-muted text-slate self-end">
@@ -35,7 +33,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-semibold text-foreground mb-4">Navigation</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 list-none">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -52,7 +50,12 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>mark@markcentoni.com</li>
+            <Link
+                className="link"
+                href="mailto:mark@oa-labs.co"
+              >
+                mark@oa-labs.co
+              </Link>
               <li>Available for new projects</li>
             </ul>
           </div>
