@@ -12,7 +12,7 @@ export default function AboutPage() {
               id="contact"
               className="text-center lg:text-left"
             >
-              <ul>
+              <ul className="list-none">
                 <li className="mb-2">
                   <Link
                     className="link"

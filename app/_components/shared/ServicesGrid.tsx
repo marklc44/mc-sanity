@@ -29,7 +29,7 @@ const services = [
   },
   {
     icon: <GoZap className="h-6 w-6" />,
-    title: 'Performance Optimization',
+    title: 'Performance & Scalability',
     description:
       'Optimize existing applications for better performance and scalability',
   },
