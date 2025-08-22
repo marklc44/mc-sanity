@@ -1,6 +1,6 @@
 const StaticHero = () => {
   return (
-    <div className="relative">
+    <div className="relative hidden md:block max-h-[680px]">
       <div className="aspect-square bg-gradient-to-br from-highlight/10 to-highlight/30 rounded-2xl p-8 backdrop-blur-sm">
         <div className="w-full h-full bg-card rounded-xl shadow-2xl p-6 my--4">
           <div className="flex items-center justify-between">

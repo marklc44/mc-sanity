@@ -83,10 +83,10 @@ export default function MainNavBar() {
         </ul>
       </nav>
       <div className={`text-right hidden lg:block`}>
-        <PillBtn
+        {/* <PillBtn
           text="Contact"
           href="/about"
-        />
+        /> */}
       </div>
 
       {/* Mobile menu */}

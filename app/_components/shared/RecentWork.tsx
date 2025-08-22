@@ -14,31 +14,31 @@ import Image from 'next/image'
 
 const recentProjects = [
   {
-    title: 'E-commerce Platform',
-    client: 'TechStartup Inc',
+    title: 'Site Redesign',
+    client: 'Hopelab',
     description:
-      'Full-stack React application with payment processing and inventory management',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-    image: '/placeholder.svg',
-    link: '#',
+      'New full-stack headless CMS site with a custom React frontend.',
+    tech: ['React', 'Next.js', 'Typescript', 'GraphQL', 'WordPress'],
+    image: '/screenshots/hopelab-stories-1.png',
+    link: '/work/hopelab',
   },
   {
-    title: 'Mobile Banking App',
-    client: 'FinTech Solutions',
+    title: 'SaaS Subscriptions',
+    client: 'NextMe',
     description:
-      'Cross-platform mobile application with biometric authentication',
-    tech: ['React Native', 'TypeScript', 'Firebase'],
-    image: '/placeholder.svg',
-    link: '#',
+      'B2B SaaS subscription management and feature gating.',
+    tech: ['React', 'Next.js', 'TypeScript', 'Laravel', 'Stripe'],
+    image: '/screenshots/nextme-plan-page.png',
+    link: '/work/nextme',
   },
   {
-    title: 'Analytics Dashboard',
-    client: 'DataCorp',
+    title: 'Waitlist Management',
+    client: 'NextMe',
     description:
-      'Real-time analytics dashboard with interactive visualizations',
-    tech: ['Next.js', 'D3.js', 'Python', 'Redis'],
-    image: '/placeholder.svg',
-    link: '#',
+      'Waitlist dashboard for managing multiple queues, custom fields, guest signup, notifications, and more.',
+    tech: ['React', 'Next.js', 'TypeScript', 'Laravel', 'Websockets'],
+    image: '/screenshots/nextme-waitlist.png',
+    link: '/work/nextme',
   },
 ]
 
@@ -71,15 +71,21 @@ const RecentWork = () => {
             key={index}
             className="group overflow-hidden border-border/50 hover:border-highlight/50 transition-all duration-300 hover:shadow-lg"
           >
-            <div className="aspect-video bg-muted/30 overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                width={500}
-                height={500}
-              />
+            <div className="tilt-3d-container group aspect-video bg-muted/30 relative overflow-hidden">
+              <div className="tilt-3d w-full h-full group-hover:scale-100 transition-transform duration-500">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                  width={500}
+                  height={500}
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 overlay-gradient pointer-events-none shadow-depth" />
+              </div>
             </div>
+
             <CardHeader>
               <div className="space-y-2">
                 <Badge
@@ -113,6 +119,7 @@ const RecentWork = () => {
                   size="sm"
                   variant="ghost"
                   className="p-0 h-auto text-highlight hover:text-highlight/80"
+                  href={project.link}
                 >
                   <FaExternalLinkAlt className="h-4 w-4 mr-1" />
                   View Project

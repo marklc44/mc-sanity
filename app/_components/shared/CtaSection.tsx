@@ -19,7 +19,8 @@ const CtaSection = () => {
             size="lg"
             className="bg-highlight hover:bg-highlight/90 text-highlight-foreground"
           >
-            <Link href="/contact">
+            {/* TODO: This should be a form */}
+            <Link href="/about">
               Get In Touch
               <FaArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -28,6 +29,7 @@ const CtaSection = () => {
             asChild
             variant="outline"
             size="lg"
+            href="/about"
           >
             <Link href="/about">Learn More About Me</Link>
           </Button>

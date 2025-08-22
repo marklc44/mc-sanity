@@ -7,6 +7,7 @@ import MainNavBar from './_components/shared/MainNavBar'
 import Footer from './_components/shared/Footer'
 import { PHProvider } from './_components/providers/PostHogProvider'
 import dynamic from 'next/dynamic'
+import ContactFormDialog from './_components/forms/ContactForm'
 
 const PostHogPageView = dynamic(
   () => import('./_components/providers/PostHogPageView')
@@ -51,6 +52,7 @@ export default function RootLayout({
           <main className="fullHeightContainer">
             <PostHogPageView />
             {children}
+            <ContactFormDialog />
           </main>
           <Footer />
         </body>
