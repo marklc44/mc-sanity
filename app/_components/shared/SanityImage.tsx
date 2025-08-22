@@ -53,6 +53,7 @@ export default function SanityImage({
   autoCrop,
   ...rest
 }: Props) {
+  // @ts-expect-error Sanity types are not fully compatible with Next.js Image component
   const isGif =
     image?.asset?.mimeType === 'image/gif' ||
     image?.asset?._ref?.includes('.gif')
