@@ -85,11 +85,9 @@ export default function ContactFormDialog() {
     e.preventDefault()
     setPostSubmissionMessage('')
 
-    const parsed = ContactFormSchema.safeParse(form)
-
-    if (!parsed.success) {
-      const firstError = parsed.error.issues?.[0]?.message || 'Invalid input'
-      setPostSubmissionMessage(firstError)
+    const formErrors = Object.values(form).filter(field => field.error).map(field => field.error)
+    if (formErrors.length > 0) {
+      setPostSubmissionMessage(formErrors.join(', '))
       return
     }
 
@@ -100,11 +98,11 @@ export default function ContactFormDialog() {
 
     const payload = {
       fields: [
-        { name: 'firstname', value: form.firstName },
-        { name: 'lastname', value: form.lastName },
-        { name: 'email', value: form.email },
-        { name: 'company', value: form.company },
-        { name: 'project_description', value: form.projectDescription },
+        { name: 'firstname', value: form.firstName.value },
+        { name: 'lastname', value: form.lastName.value },
+        { name: 'email', value: form.email.value },
+        { name: 'company', value: form.company.value },
+        { name: 'project_description', value: form.projectDescription.value },
       ],
       context: {
         pageUri: window.location.href,
