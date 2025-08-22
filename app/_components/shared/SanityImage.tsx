@@ -20,6 +20,14 @@ const getCroppedUrl = (
   height: number,
   autoCrop?: boolean
 ) => {
+  const isGif =
+    image?.asset?.mimeType === 'image/gif' ||
+    image?.asset?._ref?.includes('.gif')
+
+  if (isGif) {
+    return image?.asset?.url || ''
+  }
+
   if (autoCrop) {
     return (
       urlForImage(image)
@@ -45,10 +53,25 @@ export default function SanityImage({
   autoCrop,
   ...rest
 }: Props) {
+  const isGif =
+    image?.asset?.mimeType === 'image/gif' ||
+    image?.asset?._ref?.includes('.gif')
+
   const src = getCroppedUrl(image, width, height, autoCrop)
 
   const dimensions = getImageDimensions(src)
   const calcWidth = dimensions.height * dimensions.aspectRatio
+
+  if (isGif) {
+    <img
+      src={src || placeholderSrc}
+      alt={alt}
+      width={width}
+      height={height}
+      className={`min-w-full`}
+      {...rest}
+    />
+  }
 
   return (
     <Image

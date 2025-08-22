@@ -4,6 +4,7 @@ import ClientSpotlight from '@/app/_components/shared/work/ClientSpotlight'
 
 export default async function WorkPage() {
   const works = await getWork()
+  console.log('works: ', works)
   return (
     <div className="fullHeightContainer">
       <ContentSection>

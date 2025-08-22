@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { FaCode } from 'react-icons/fa'
+import EmailAddress from '../forms/ContactForm/EmailAddress'
+import ContactFormButton from '../forms/ContactForm/ContactFormButton'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -50,12 +52,8 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-            <Link
-                className="link"
-                href="mailto:mark@oa-labs.co"
-              >
-                mark@oa-labs.co
-              </Link>
+              <EmailAddress />
+              <ContactFormButton text="Contact" />
               <li>Available for new projects</li>
             </ul>
           </div>
