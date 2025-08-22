@@ -2,10 +2,11 @@
 
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import EmailAddress from './EmailAddress'
 import Spinner from '@/app/_components/shared/Spinner'
-import { z, ZodError, SafeParseReturnType } from 'zod'
+import { z, ZodError } from 'zod'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { useSearchParams, useRouter } from 'next/navigation'
 
 const noHtml = /^[^<>]*$/
 
@@ -19,7 +20,6 @@ const ContactFormSchema = z.object({
 })
 
 export default function ContactFormDialog() {
-  const [isOpen, setIsOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [postSubmissionMessage, setPostSubmissionMessage] = useState('')
 
@@ -30,9 +30,16 @@ export default function ContactFormDialog() {
     company: { value: '', error: '' },
     projectDescription: { value: '', error: '' },
   })
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
+  const isOpen = searchParams.get('contact') === 'open'
+
+  const handleOpen = () => {
+    router.replace('?contact=open', { scroll: false });
+  }
 
   const handleClose = () => {
-    setIsOpen(false)
     setForm({
       firstName: { value: '', error: '' },
       lastName: { value: '', error: '' },
@@ -41,6 +48,7 @@ export default function ContactFormDialog() {
       projectDescription: { value: '', error: '' },
     })
     setPostSubmissionMessage('')
+    router.push(window.location.pathname, { scroll: false })
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -122,7 +130,7 @@ export default function ContactFormDialog() {
           projectDescription: { value: '', error: '' }
         })
         setPostSubmissionMessage("Success! I'll be in touch soon.")
-        setTimeout(() => setIsOpen(false), 3000)
+        setTimeout(() => handleClose(), 3000)
       } else {
         setPostSubmissionMessage('There was a problem submitting the form.')
       }
@@ -138,7 +146,7 @@ export default function ContactFormDialog() {
   return (
     <>
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={handleOpen}
         className="fixed top-10 right-8 z-50 px-4 py-2 bg-highlight hover:bg-highlight/80 text-white rounded shadow-md"
       >
         Contact
@@ -171,7 +179,11 @@ export default function ContactFormDialog() {
                   <div>
                     <h2 className="text-2xl font-bold mb-4">Let’s Talk</h2>
                     <p className="text-gray-700">
-                      I'd love to hear about your project. Fill out the form or email me at <EmailAddress /> and I'll be in touch soon.
+                      I'd love to hear about your project. Fill out the form or contact me on <Link
+                        className="link"
+                        target="_blank"
+                        href="https://www.linkedin.com/in/markcentoni/"
+                      >LinkedIn</Link> and I'll be in touch soon.
                     </p>
                   </div>
                 </div>
@@ -217,6 +229,21 @@ export default function ContactFormDialog() {
                     <FieldWrapper>
                       <input
                         type="text"
+                        name="company"
+                        placeholder="Company Name"
+                        value={form.company.value}
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        className={clsx(
+                          "border border-gray-300 p-2 rounded w-full outline-none transition-shadow duration-200 mb-0.5",
+                          form.company.error && "outline outline-2 outline-red-500 border-0"
+                        )}
+                      />
+                      <FieldError error={form.company.error} />
+                    </FieldWrapper>
+                    <FieldWrapper>
+                      <input
+                        type="text"
                         name="email"
                         placeholder="Email"
                         value={form.email.value}
@@ -232,7 +259,7 @@ export default function ContactFormDialog() {
                     <FieldWrapper>
                       <textarea
                         name="projectDescription"
-                        placeholder="Tell us about your project..."
+                        placeholder="Tell me about your project..."
                         value={form.projectDescription.value}
                         onBlur={handleBlur}
                         onChange={handleChange}

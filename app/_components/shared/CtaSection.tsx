@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from './Button'
-import { FaArrowRight } from 'react-icons/fa'
+import ContactFormButton from '../forms/ContactForm/ContactFormButton'
 
 const CtaSection = () => {
   return (
@@ -14,17 +14,7 @@ const CtaSection = () => {
           life. From concept to deployment, I'll guide you through every step.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            asChild
-            size="lg"
-            className="bg-highlight hover:bg-highlight/90 text-highlight-foreground"
-          >
-            {/* TODO: This should be a form */}
-            <Link href="/about">
-              Get In Touch
-              <FaArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <ContactFormButton text="Get In Touch" />
           <Button
             asChild
             variant="outline"
