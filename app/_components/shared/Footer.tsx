@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Navigation</h3>
+            <h3 className="font-semibold text-foreground mb-4">Links</h3>
             <ul className="space-y-2 list-none">
               {navigation.map((item) => (
                 <li key={item.name}>
@@ -51,11 +51,21 @@ export default function Footer() {
 
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
-            <ul className="space-y-2 text-muted-foreground">
+            <div className="space-y-2 text-muted-foreground flex flex-col gap-2">
+              <div>
+                <Link
+                  className="link"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/markcentoni/"
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >LinkedIn</Link>
+              </div>
               <EmailAddress />
               <ContactFormButton text="Contact" />
-              <li>Available for new projects</li>
-            </ul>
+              <p>Available for new projects</p>
+            </div>
           </div>
         </div>
 
