@@ -1,5 +1,6 @@
 import ContentSection from '../../_components/shared/ContentSection'
 import Link from 'next/link'
+import EmailAddress from '@/app/_components/forms/ContactForm/EmailAddress'
 
 export default function AboutPage() {
   return (
@@ -43,7 +44,7 @@ export default function AboutPage() {
                 <li className="mb-2">
                   <Link
                     className="link"
-                    href="mailto:mark@oa-labs.co"
+                    href="mailto:mark@markcentoni.com"
                   >
                     Email
                   </Link>
@@ -58,7 +59,7 @@ export default function AboutPage() {
               </div>
 
               <p>
-              I’m a senior engineer and former engineering manager with a background leading teams at both startups and enterprise companies. Over the past few years, I’ve worked closely with founders, marketers, and product leaders to build:
+                I’m a senior engineer and former engineering manager with a background leading teams at both startups and enterprise companies. Over the past few years, I’ve worked closely with founders, marketers, and product leaders to build:
               </p>
               <ul>
                 <li>Scalable frotends in React + Nextjs</li>
@@ -91,14 +92,9 @@ export default function AboutPage() {
               </p>
               <p>
                 Email me at{' '}
-                <Link
-                  className="link"
-                  href="mailto:mark@oa-labs.co"
-                >
-                  mark@oa-labs.co
-                </Link>
+                <EmailAddress />
                 .
-                </p>
+              </p>
             </section>
           </div>
         </div>
